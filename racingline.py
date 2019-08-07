@@ -45,22 +45,22 @@ class Gui:
         
     def calculate(self):
         try: 
-            int(self.radius.get())
+            float(self.radius.get())
         except Exception:
             box.showerror(message='Non-numeric entered!')
             return
         try: 
-            int(self.width.get())
+            float(self.width.get())
         except Exception:
             box.showerror(message='Non-numeric entered!')
             return
         try: 
-            int(self.angle.get())
+            float(self.angle.get())
         except Exception:
             box.showerror(message='Non-numeric entered!')
             return
-        output=int(self.width.get())/(np.sin((int(self.angle.get())*np.pi/180)/2)*np.tan((int(self.angle.get())*np.pi/180)/4))
-        txoutput=str(output+int(self.radius.get()))+' with constant for angle of (m) '+str(output)
+        output=float(self.width.get())/(np.sin((float(self.angle.get())*np.pi/180)/2)*np.tan((float(self.angle.get())*np.pi/180)/4))
+        txoutput=str(output+float(self.radius.get()))+' with constant for angle of (m) '+str(output)
         self.output.configure(text=txoutput)
         
 gui=Gui()
